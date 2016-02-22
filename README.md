@@ -5,12 +5,12 @@ Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin
 
 ## Start a slave
 
-   docker run -d heliostech/jenkins-swarm-java -master http://jenkins-server/ -username jenkins -password password -executors 2 -labels "linux debian java"
+   `docker run -d heliostech/jenkins-swarm-java -master http://jenkins-server/ -username jenkins -password password -executors 2 -labels "linux debian java"`
 
 
 ## Available Options
 
-   docker run -it --rm heliostech/jenkins-swarm-java -help
+   `docker run -it --rm heliostech/jenkins-swarm-java -help`
 
 Parameter | Description
 ----------|------------
