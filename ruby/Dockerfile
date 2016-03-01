@@ -10,6 +10,7 @@ ENV JENKINS_SWARM_JAR  $JENKINS_SWARM_JAR_PATH/swarm-client-$JENKINS_SWARM_VERSI
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     openjdk-7-jre-headless \
+    git \
     zip
 
 RUN useradd -d $HOME -m jenkins-slave \
