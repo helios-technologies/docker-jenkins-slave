@@ -44,6 +44,8 @@ RUN useradd -d $HOME -m jenkins-slave \
     && curl -sSLo $JENKINS_SWARM_JAR \
     http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
 
+RUN env | grep -E "(JENKINS|JAVA)" > /etc/docker.properties
+
 USER jenkins-slave
 VOLUME $HOME
 
