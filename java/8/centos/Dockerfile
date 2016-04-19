@@ -6,8 +6,8 @@ MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
 # Install Java
 #
 ENV JAVA_VERSION 8
-ENV JAVA_UPDATE 74
-ENV JAVA_BUILD 02
+ENV JAVA_UPDATE 77
+ENV JAVA_BUILD 03
 
 ENV JAVA_HOME /usr/java/latest
 ENV JRE_HOME ${JAVA_HOME}/jre
