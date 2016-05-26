@@ -10,6 +10,12 @@ RUN yum install -y epel-release
 RUN yum install -y ansible
 
 #
+# Misc tools setup
+#
+
+RUN yum install -y git wget
+
+#
 # Jenkins Slave setup
 #
 
