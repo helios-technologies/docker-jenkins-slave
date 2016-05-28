@@ -1,0 +1,25 @@
+require 'erb'
+require 'fileutils'
+
+DockerApiVersions = [
+  {docker: "1.11", 	api: "1.23"},
+  {docker: "1.10", 	api: "1.22"},
+  {docker: "1.9",  	api: "1.21"},
+  {docker: "1.8",  	api: "1.20"},
+  {docker: "1.7",  	api: "1.19"},
+  {docker: "1.6",  	api: "1.18"},
+]
+
+task :generate do
+  tpl = ERB.new(File.read("Dockerfile.erb"))
+  swarm_version = "2.0"
+  swarm_jar_path = "/usr/share/jenkins"
+  DockerApiVersions.each do |version|
+    path = version[:api]
+    Dir.mkdir(path) unless Dir.exists?(path)
+    File.open(File.join(path, "Dockerfile"), "w") do |f|
+      f.write(tpl.result(binding))
+    end
+    FileUtils.cp("entrypoint.sh", path)
+  end
+end
