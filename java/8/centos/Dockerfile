@@ -52,7 +52,7 @@ RUN useradd -d ${HOME} -m jenkins-slave \
 # Additional tools & dependencies
 #
 
-RUN yum install -y git gzip2 fontconfig \
+RUN yum install -y git wget zip unzip gzip2 fontconfig \
     && env | egrep "(JENKINS|JAVA)" > /etc/docker.properties
 
 USER jenkins-slave
