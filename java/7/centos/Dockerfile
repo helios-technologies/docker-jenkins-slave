@@ -48,7 +48,7 @@ RUN useradd -d $HOME -m jenkins-slave \
 # Additional development tools
 #
 
-RUN yum install -y git \
+RUN yum install -y git wget zip unzip gzip2 fontconfig \
     && env | grep -E "(JENKINS|JAVA)" > /etc/docker.properties
 
 USER jenkins-slave
