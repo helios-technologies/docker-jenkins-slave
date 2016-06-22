@@ -8,7 +8,7 @@ ENV JENKINS_SWARM_JAR_PATH /usr/share/jenkins
 ENV JENKINS_SWARM_JAR  $JENKINS_SWARM_JAR_PATH/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
 
 RUN yum install -y \
-    java-1.7.0-openjdk \
+    java-1.7.0-openjdk-devel \
     glibc-devel.i386 \
     libstdc++-devel.i386 \
     epel-release \
