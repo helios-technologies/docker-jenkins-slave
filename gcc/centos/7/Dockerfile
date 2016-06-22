@@ -8,7 +8,7 @@ ENV JENKINS_SWARM_JAR_PATH /usr/share/jenkins
 ENV JENKINS_SWARM_JAR  $JENKINS_SWARM_JAR_PATH/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
 
 RUN yum install -y \
-    java-1.8.0-openjdk \
+    java-1.8.0-openjdk-devel \
     glibc-devel.{i686,x86_64} \
     libstdc++-devel.{i686,x86_64} \
     valgrind-devel.{i686,x86_64} \
