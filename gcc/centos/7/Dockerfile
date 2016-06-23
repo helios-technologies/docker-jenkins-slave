@@ -3,11 +3,11 @@ FROM centos:7
 MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
 
 ENV HOME=/home/jenkins-slave \
-    JAVA_HOME=/usr/java/latest \
+    JAVA_HOME=/usr/lib/jvm/java \
     JENKINS_SWARM_VERSION=2.0 \
     JENKINS_SWARM_JAR_PATH=/usr/share/jenkins
 
-RUN yum update \
+RUN yum update -y \
     && yum install -y java-1.8.0-openjdk-devel \
                       glibc-devel.{i686,x86_64} \
                       libstdc++-devel.{i686,x86_64} \
