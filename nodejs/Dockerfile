@@ -9,6 +9,7 @@ USER root
 ENV GROOVY_VERSION=2.4.6 \
     PATH=${PATH}:/opt/groovy/bin
 
+RUN yum install -y bzip2 liberation* dejavu*
 RUN yum install -y unzip \
     && curl -sSLo apache-groovy-binary-${GROOVY_VERSION}.zip https://dl.bintray.com/groovy/maven/apache-groovy-binary-${GROOVY_VERSION}.zip \
     && unzip apache-groovy-binary-${GROOVY_VERSION}.zip -d /opt/ \
