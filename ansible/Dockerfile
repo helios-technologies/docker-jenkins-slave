@@ -3,17 +3,14 @@ FROM centos:centos7
 MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
 
 #
-# Ansible setup
+# Ansible and misc tools setup
 #
 
-RUN yum install -y epel-release
-RUN yum install -y ansible
-
-#
-# Misc tools setup
-#
-
-RUN yum install -y git wget
+RUN yum install -y \
+    ansible \
+    epel-release \
+    git \
+    wget;
 
 #
 # Jenkins Slave setup
