@@ -6,7 +6,14 @@ Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin
 ### Start a slave
 
 ```
-docker run -d heliostech/jenkins-slave-ansible -master http://jenkins-server/ -username JENKINS_USER -password JENKINS_USER_KEY -executors 2 -labels "linux ansible"
+docker run \
+  --detach \
+  heliostech/jenkins-slave-ansible \
+  -master http://jenkins-server/ \
+  -username JENKINS_USER \
+  -password JENKINS_USER_KEY \
+  -executors 2 \
+  -labels "linux ansible"
 ```
 
 
