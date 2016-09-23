@@ -20,7 +20,7 @@ RUN yum install -y git wget
 #
 
 ENV HOME=/home/jenkins-slave \
-    JENKINS_SWARM_VERSION=2.0 \
+    JENKINS_SWARM_VERSION=2.2 \
     JENKINS_SWARM_JAR_PATH=/usr/share/jenkins \
     JENKINS_SWARM_JAR=$JENKINS_SWARM_JAR_PATH/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
 
