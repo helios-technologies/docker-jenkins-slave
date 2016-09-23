@@ -28,7 +28,9 @@ RUN yum install -y java-1.8.0-openjdk-headless \
     && useradd -d $HOME -m jenkins-slave \
     && mkdir -p $JENKINS_SWARM_JAR_PATH \
     && chmod 755 $JENKINS_SWARM_JAR_PATH \
-    && curl -sSLo $JENKINS_SWARM_JAR https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
+    && curl -sSLo $JENKINS_SWARM_JAR https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar \
+    && JENKINS_SWARM_JAR_SHA1=$(curl -s https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$JENKINS_SWARM_VERSION/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar.sha1) \
+    && echo "${JENKINS_SWARM_JAR_SHA1} ${JENKINS_SWARM_JAR}" | sha1sum -c -
 
 COPY entrypoint.sh /
 RUN chmod 755 /entrypoint.sh \
