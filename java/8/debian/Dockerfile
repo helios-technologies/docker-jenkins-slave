@@ -14,9 +14,10 @@ RUN useradd -d $HOME -m jenkins-slave \
 
 RUN env | grep -E "(JENKINS|JAVA)" > /etc/docker.properties
 
-USER jenkins-slave
-VOLUME $HOME
-
 COPY entrypoint.sh /usr/bin/
 RUN chmod 755 /usr/bin/entrypoint.sh
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+USER jenkins-slave
+VOLUME ${HOME}
+WORKDIR ${HOME}
