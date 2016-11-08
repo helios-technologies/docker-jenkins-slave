@@ -22,3 +22,6 @@ Select "Inject environment variables to the build process" and set the "Properti
    `docker run -it --rm heliostech/jenkins-slave-nodejs -help`
 
 
+## Credits
+
+   This container is part of [DevStack](https://www.devstack.com/), a project to facilitate DevOps work with continuous integration and deployment environment ready to use.
