@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
+MAINTAINER Camille Meulien <camille.meulien@gmail.com>
 
 #
 # Jenkins slave install
@@ -15,7 +15,7 @@ RUN apt-get update \
     && useradd -d ${HOME} -m jenkins-slave \
     && mkdir -p <%= swarm_jar_path %> \
     && chmod 755 <%= swarm_jar_path %> \
-    && curl -sSLo ${JENKINS_SWARM_JAR} http://maven.jenkins-ci.org/content/repositories/releases/org/jenkins-ci/plugins/swarm-client/<%= swarm_version %>/swarm-client-<%= swarm_version %>-jar-with-dependencies.jar
+    && curl -sSLo ${JENKINS_SWARM_JAR} http://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/${JENKINS_SWARM_VERSION}/swarm-client-${JENKINS_SWARM_VERSION}-jar-with-dependencies.jar
 
 RUN env | grep -E "(JENKINS|JAVA)" > /etc/docker.properties
 
