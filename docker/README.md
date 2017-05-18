@@ -17,6 +17,7 @@ Use the table below to find the API version for a Docker version:
 
 |Docker version |API version|
 |---------------|-----------|
+|1.12.x         |1.24       |
 |1.11.x         |1.23       |
 |1.10.x         |1.22       |
 |1.9.x          |1.21       |
@@ -31,3 +32,6 @@ Use the table below to find the API version for a Docker version:
    `docker run -it --rm heliostech/jenkins-slave-docker -help`
 
 
+## Credits
+
+   This container is part of [DevStack](https://www.devstack.com/), a project to facilitate DevOps work with continuous integration and deployment environment ready to use.

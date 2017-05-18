@@ -2,6 +2,7 @@ require 'erb'
 require 'fileutils'
 
 DockerApiVersions = [
+  {docker: "1.12", 	api: "1.24"},
   {docker: "1.11", 	api: "1.23"},
   {docker: "1.10", 	api: "1.22"},
   {docker: "1.9",  	api: "1.21"},
@@ -12,7 +13,7 @@ DockerApiVersions = [
 
 task :generate do
   tpl = ERB.new(File.read("Dockerfile.erb"))
-  swarm_version = "2.0"
+  swarm_version = "2.2"
   swarm_jar_path = "/usr/share/jenkins"
   DockerApiVersions.each do |version|
     path = version[:api]

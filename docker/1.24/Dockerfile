@@ -33,7 +33,7 @@ RUN apt-get install -y openjdk-7-jre-headless apt-transport-https ca-certificate
     && echo deb https://apt.dockerproject.org/repo debian-jessie main > /etc/apt/sources.list.d/docker.list \
     && apt-get update
 
-RUN apt-get install -y docker-engine=$(apt-cache show docker-engine | grep -F "Version: 1.8" | sort | tail -n1 | sed -r 's/Version: //')
+RUN apt-get install -y docker-engine=$(apt-cache show docker-engine | grep -F "Version: 1.12" | sort | tail -n1 | sed -r 's/Version: //')
 
 USER jenkins-slave
 

@@ -1,5 +1,5 @@
 Jenkins slave with Oracle Java development environment
-===============================================
+======================================================
 
 Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin) slave into docker with Oracle Java Development Kit (JDK) and Maven.
 
@@ -22,3 +22,6 @@ Select "Inject environment variables to the build process" and set the "Properti
    `docker run -it --rm heliostech/jenkins-slave-java:8 -help`
 
 
+## Credits
+
+   This container is part of [DevStack](https://www.devstack.com/), a project to facilitate DevOps work with continuous integration and deployment environment ready to use.

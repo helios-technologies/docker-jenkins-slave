@@ -1,6 +1,6 @@
 FROM heliostech/jenkins-slave-java:8
 
-MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
+MAINTAINER Camille Meulien <camille.meulien@gmail.com>
 
 USER root
 #

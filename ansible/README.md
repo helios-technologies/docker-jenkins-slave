@@ -24,3 +24,7 @@ Display the available options with the following command:
 ```
 docker run -it --rm heliostech/jenkins-slave-ansible -help
 ```
+
+## Credits
+
+   This container is part of [DevStack](https://www.devstack.com/), a project to facilitate DevOps work with continuous integration and deployment environment ready to use.

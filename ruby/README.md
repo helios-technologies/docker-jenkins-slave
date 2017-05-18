@@ -15,3 +15,6 @@ Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin
    `docker run -it --rm heliostech/jenkins-slave-ruby -help`
 
 
+## Credits
+
+   This container is part of [DevStack](https://www.devstack.com/), a project to facilitate DevOps work with continuous integration and deployment environment ready to use.

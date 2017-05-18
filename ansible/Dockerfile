@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
+MAINTAINER Camille Meulien <camille.meulien@gmail.com>
 
 #
 # Ansible and misc tools setup
@@ -15,11 +15,10 @@ RUN yum install -y \
 #
 # Jenkins Slave setup
 #
-
-ENV JENKINS_SWARM_VERSION=2.2
-ENV HOME=/home/jenkins-slave
-ENV JENKINS_SWARM_JAR_PATH=/usr/share/jenkins
-ENV JENKINS_SWARM_JAR=$JENKINS_SWARM_JAR_PATH/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
+ENV HOME=/home/jenkins-slave \
+    JENKINS_SWARM_VERSION=2.2 \
+    JENKINS_SWARM_JAR_PATH=/usr/share/jenkins
+ENV JENKINS_SWARM_JAR=$JENKINS_SWARM_JAR_PATH/swarm-client-${JENKINS_SWARM_VERSION}-jar-with-dependencies.jar
 
 RUN yum install -y java-1.8.0-openjdk-headless \
     && useradd -d $HOME -m jenkins-slave \
